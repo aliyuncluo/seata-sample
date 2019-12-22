@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cluo.dao.OrderInfoMapper">
+    
+    <insert id="createOrder" parameterType="com.cluo.dto.OrderDTO" flushCache="true">
+         insert into order_tbl
+         (user_id,
+          commodity_code,
+          count,
+          money)
+         values
+         (#{userId,jdbcType=VARCHAR},
+          #{commodityCode,jdbcType=VARCHAR},
+          #{orderCount,jdbcType=INTEGER},
+          #{orderAmount,jdbcType=DECIMAL}
+         )
+    </insert>
+</mapper>

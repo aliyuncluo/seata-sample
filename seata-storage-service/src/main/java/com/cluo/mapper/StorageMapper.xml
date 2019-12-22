@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cluo.dao.StorageInfoMapper">
+    
+    <update id="decreaseStorage" parameterType="com.cluo.dto.CommodityDTO" flushCache="true">
+        update storage_tbl
+        set count = count - #{count,jdbcType=INTEGER}
+        where commodity_code = #{commodityCode,jdbcType=VARCHAR}
+    </update>
+    
+</mapper>
